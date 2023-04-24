@@ -17,16 +17,16 @@ export type LocalGithubUser = {
 export type GithubUser = {
   id: number, 
   login: string,
-  avatar_url: string, 
+  avatarUrl: string, 
   name: string,
   company: string,
-  blog: string,
+  websiteUrl: string,
   location: string,
   bio: string,
-  twitter_username: string,
-  public_repos: number,
-  followers: number,
-  following: number,
+  twitterUsername: string,
+  repositories: {totalCount: number},
+  followers: {totalCount: number},
+  following: {totalCount: number},
   created_at: string,
 };
 

@@ -31,6 +31,12 @@ body[data-theme='light'] {
   --search-color: var(--gray-300);
   --search-placeholder-color: var(--gray-200);
   --search-shadow: var(--shadow);
+  --text-color: var(--gray-300);
+  --ucard-bg: var(--white);
+  --bio-color: var(--gray-200);
+  --ucard-shadow: var(--shadow);
+  --utitle-color: var(--gray-300);
+  --ujoined-color: var(--gray-100);
 }
 
 body[data-theme='dark'] {
@@ -41,6 +47,12 @@ body[data-theme='dark'] {
   --search-color: var(--white);
   --search-placeholder-color: var(--white);
   --search-shadow: unset;
+  --text-color: var(--white);
+  --ucard-bg: var(--gray-400);
+  --bio-color: var(--white);
+  --ucard-shadow: unset;
+  --utitle-color: var(--white);
+  --ujoined-color: var(--white);
 }
 
 body {

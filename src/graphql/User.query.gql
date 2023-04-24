@@ -1,0 +1,23 @@
+query($login: String!) { 
+  user(login: $login) { 
+    id
+    login
+    avatarUrl
+    name
+    company
+    websiteUrl
+    location
+    bio
+    twitterUsername
+    repositories(first: 1) {
+      totalCount
+    }
+    followers(first: 1) {
+      totalCount
+    }
+    following(first: 1) {
+      totalCount
+    }
+    createdAt
+  }
+}
