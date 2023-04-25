@@ -1,27 +1,26 @@
 <script setup lang="ts">
 import { localDate } from '@/utils/local-date'
-import type { LocalGithubUser } from '@/types';
 
-interface UserTitleProps extends Pick<
-  LocalGithubUser,
-  'login' | 'name' | 'created'
-> { }
+type PropTypes = {
+  login: string
+  name: string
+  created: string
+}
 
-const { name, login, created } = defineProps<UserTitleProps>()
+const props = defineProps<PropTypes>()
 
-// const joinedDate = localDate.format(new Date(created));
+const joinedDate = localDate.format(new Date(props.created));
 </script>
 
 <template>
-  hello
   <div class="userTitle">
-    <h2>{{ name }}</h2>
-    <h3>{{ login }}</h3>
-    <!-- <span>{{ joinedDate }}</span> -->
+    <h2>{{ props.name }}</h2>
+    <h3>{{ props.login }}</h3>
+    <span>{{ joinedDate }}</span>
   </div>
 </template>
 
-<style scoped>
+<style>
 .userTitle h2 {
   font-size: 1rem;
   line-height: 1.5;
@@ -51,12 +50,6 @@ const { name, login, created } = defineProps<UserTitleProps>()
 }
 
 @media (min-width: 767px) {
-  .userTitle {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-auto-flow: column;
-    gap: 2px 10px;
-  }
   .userTitle h2 {
     font-size: 1.5rem;
   }
@@ -68,6 +61,15 @@ const { name, login, created } = defineProps<UserTitleProps>()
   .userTitle span {
     font-size: 1rem;
     justify-self: end;
+  }
+
+  @media (min-width: 1024px) {
+    .userTitle {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-auto-flow: column;
+      gap: 2px 10px;
+    }
   }
 }
 </style>

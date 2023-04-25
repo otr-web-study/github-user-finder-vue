@@ -27,7 +27,7 @@ export type GithubUser = {
   repositories: {totalCount: number},
   followers: {totalCount: number},
   following: {totalCount: number},
-  created_at: string,
+  createdAt: string,
 };
 
 export type GithubError = {

@@ -32,7 +32,7 @@ const handleSearchSubmit = (search: string) => {
 <template>
   <Container>
     <TheHeader />
-    <TheSearch :has-error="false" @submit="handleSearchSubmit"/>
+    <TheSearch :has-error="!user" @submit="handleSearchSubmit"/>
     <p v-if="loading" class="fetching-info">Loading...</p>
     <p v-if="error" class="fetching-info">
       Something went wrong...
@@ -43,7 +43,7 @@ const handleSearchSubmit = (search: string) => {
   </Container>
 </template>
 
-<style scoped>
+<style>
 .fetching-info {
   margin-top: 1.5rem;
   color: var(--text-color)

@@ -11,7 +11,7 @@
 import ThemeSwitcher from '@/components/ThemeSwitcher.vue'
 </script>
 
-<style scoped>
+<style>
 .header {
   margin: 35px 0;
   display: flex;

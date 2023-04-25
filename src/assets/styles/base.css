@@ -37,6 +37,11 @@ body[data-theme='light'] {
   --ucard-shadow: var(--shadow);
   --utitle-color: var(--gray-300);
   --ujoined-color: var(--gray-100);
+  --stat-bg: var(--gray-50);
+  --stat-color: var(--gray-300);
+  --stat-bg: var(--gray-50);
+  --stat-color: var(--gray-300);
+  --info-color: var(--gray-200);
 }
 
 body[data-theme='dark'] {
@@ -53,6 +58,11 @@ body[data-theme='dark'] {
   --ucard-shadow: unset;
   --utitle-color: var(--white);
   --ujoined-color: var(--white);
+  --stat-bg: var(--gray-500);
+  --stat-color: var(--white);
+  --stat-bg: var(--gray-500);
+  --stat-color: var(--white);
+  --info-color: var(--white);
 }
 
 body {

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import UserTitle from '@/components/UserTitle.vue'
+import UserStat from '@/components/UserStat.vue'
+import UserInfo from '@/components/UserInfo.vue'
 import type { LocalGithubUser } from '@/types';
 
 type PropTypes = {
@@ -26,19 +28,19 @@ const { user } = defineProps<PropTypes>()
       }">
       {{ user.bio || 'This profile has no bio' }}
     </p>
-    <!-- <UserStat 
-      repos={user.repos}
-      followers={user.followers}
-      following={user.following} />
+    <UserStat 
+      :repos="user.repos"
+      :followers="user.followers"
+      :following="user.following" />
     <UserInfo
-      blog={user.blog}
-      company={user.company}
-      twitter={user.twitter}
-      location={user.location} /> -->
+      :blog="user.blog"
+      :company="user.company"
+      :twitter="user.twitter"
+      :location="user.location" />
   </div>
 </template>
 
-<style scoped>
+<style>
 .userCard {
   margin: 1.5rem 0 3rem;
   width: 100%;
@@ -51,8 +53,8 @@ const { user } = defineProps<PropTypes>()
   gap: 25px 20px;
 }
 
-.userCard:nth-child(n + 3) {
-  rid-column: 1 / span 2;
+.userCard>*:nth-child(n + 3) {
+  grid-column: 1 / span 2;
 }
 
 .userCard__avatar {
@@ -83,7 +85,7 @@ const { user } = defineProps<PropTypes>()
     gap: 30px 40px;
   }
 
-  .userCard:nth-child(n + 2){
+  .userCard>*:nth-child(n + 2){
     grid-column: 2 / span 1;
   }
 }

@@ -41,7 +41,7 @@ const handleSubmit = () => {
   </form>
 </template>
 
-<style scoped>
+<style>
 .search {
   position: relative;
   width: 100%;

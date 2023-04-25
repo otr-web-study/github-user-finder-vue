@@ -10,7 +10,7 @@ defineEmits<{
 }>()
 </script>
 
-<style scoped>
+<style>
 .button {
   padding: 12px 24px;
   border-radius: 10px;

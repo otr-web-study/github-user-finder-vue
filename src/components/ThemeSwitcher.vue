@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /// <reference types="vite-svg-loader" />
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import SunIcon from '@/assets/images/icon-sun.svg?component'
 import MoonIcon from '@/assets/images/icon-moon.svg?component'
 
@@ -12,9 +12,13 @@ const setDark = () => {
   isDark.value = !isDark.value
 }
 
-watch(isDark, () => {
+const setTheme = () => {
   document.body.setAttribute('data-theme', isDark.value ? 'dark' : 'light')
-})
+}
+
+onMounted(setTheme)
+
+watch(isDark, setTheme)
 
 </script>
 
@@ -25,7 +29,7 @@ watch(isDark, () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .switcher {
   display: flex;
   align-items: center;

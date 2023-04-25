@@ -13,5 +13,5 @@ export const extractLocalUser = (user:GithubUser): LocalGithubUser => ({
   repos: user.repositories.totalCount,
   followers: user.followers.totalCount,
   following: user.following.totalCount,
-  created: user.created_at,
+  created: user.createdAt,
 });
